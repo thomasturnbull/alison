@@ -1,0 +1,21 @@
+<?php
+
+function alisonmods_menu() {
+    $items['latestcomic'] = array(
+      'page callback' => 'alisonmods_latestcomic',
+      'access arguments' => array('access content'),
+    );
+    return $items;
+  }
+
+  function alisonmods_latestcomic() {
+    // change to correct nid
+    $latest = db_select('node')
+      ->fields('node', array('nid'))
+      ->condition('status', 1)
+      ->condition('type', 'comic_strip', '=')
+      ->range(0, 1)
+      ->orderBy('created', 'DESC')
+      ->execute()->fetchAssoc();
+    drupal_goto('node/' . $latest['nid']);
+  }

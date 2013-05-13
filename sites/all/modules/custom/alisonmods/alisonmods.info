@@ -1,0 +1,5 @@
+name = Alisonmods
+core = 7.x
+description = Customizations for Alison and her robot.
+
+files[] = alison.module
