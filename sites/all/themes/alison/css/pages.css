@@ -15,9 +15,11 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: #63848E;
 }
 
 #page {
+  background-color: #FFF;
 }
 
 /*
@@ -231,4 +233,9 @@ span.field-label { /* The inline field label used by the Fences module */
  */
 
 .region-bottom { /* Wrapper for any blocks placed in the page bottom region */
+}
+
+.field-name-field-image-page {
+  float: left;
+  margin-right: 20px;
 }
