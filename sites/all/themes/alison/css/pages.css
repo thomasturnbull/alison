@@ -118,7 +118,8 @@ body {
 
 body.node-type-comic-strip #content h1,
 body.node-type-book-page #content h1,
-body.section-about  #content h1 {
+body.section-about  #content h1,
+body.section-store #content h1 {
   display: none;
 }
 
@@ -133,7 +134,10 @@ h3.title { /* Comment title */
 
 h1.title,
 #block-block-1,
-ul.flippy a {
+ul.flippy a,
+#block-commerce-cart-cart .block-title,
+body.section-store h2 a,
+body.section-store h2 {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   font-size: 1.1em;
   color: #000;
@@ -184,6 +188,12 @@ body.section-about .node img {
 
 #disqus_thread {
   margin-top: 30px;
+}
+
+/* store */
+
+body.section-store div.view-store {
+  padding-bottom: 30px;
 }
 
 tr.even { /* Some tables have rows marked even or odd. */
