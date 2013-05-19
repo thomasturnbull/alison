@@ -45,6 +45,7 @@ body {
  */
 
 #header {
+  padding-left: 20px;
 }
 
 #logo { /* Wrapping link for logo */
@@ -95,6 +96,8 @@ body {
  */
 
 #content {
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 .region-highlighted {
@@ -113,7 +116,9 @@ body {
   padding: 0;
 }
 
-#content h1 {
+body.node-type-comic-strip #content h1,
+body.node-type-book-page #content h1,
+body.section-about  #content h1 {
   display: none;
 }
 
@@ -124,6 +129,61 @@ h2.title, /* Comment section heading */
 h2.comment-form, /* Comment form heading */
 h3.title { /* Comment title */
   margin: 0;
+}
+
+h1.title,
+#block-block-1,
+ul.flippy a {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-size: 1.1em;
+  color: #000;
+  font-weight: normal; 
+}
+
+/* Comics stuff */
+
+ul.flippy {
+  float: right;
+}
+
+#block-block-1 {
+  position: absolute;
+}
+
+body.node-type-comic-strip .field-name-body,
+body.page-archive div.view,
+body.section-about .field-name-body {
+  background-color: #D8E0E3;
+  padding: 1px 15px;
+}
+
+body.node-type-comic-strip .field-name-field-comic {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+/* Archives */
+
+body.page-archive div.view {
+  padding: 15px;
+  margin: 30px 0;
+}
+
+body.page-archive div.view a {
+  color: #000;
+}
+
+/* About */
+
+body.section-about .node img {
+  border-right: 20px solid #FFF;
+  margin-bottom: 20px;
+}
+
+/* disqus */
+
+#disqus_thread {
+  margin-top: 30px;
 }
 
 tr.even { /* Some tables have rows marked even or odd. */
