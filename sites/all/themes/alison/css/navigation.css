@@ -41,7 +41,7 @@ li a.active {
   /* overflow: hidden; */ /* Sometimes you want to prevent overlapping with main div. */
   position: relative;
   height: 1em;
-  margin-top: 80px;
+  margin-top: 83px;
 }
 
 #navigation .block {
@@ -80,7 +80,7 @@ li a.active {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   font-size: 1.3em;
   color: #000;
-  margin-left: 70px;
+  margin-left: 90px;
 }
 
 /*
