@@ -199,6 +199,30 @@ body.section-store div.view-store {
   padding-bottom: 30px;
 }
 
+body.section-store div.view-store div.views-row {
+  width: 294px;
+  float: left;
+  background-color: #B1C3C7;
+  margin-left: 26px;
+  margin-bottom: 26px;
+  padding: 17px;
+}
+
+body.section-store h2 {
+  text-align: center;
+  line-height: 1.7em;
+  margin-bottom: 14px;
+}
+
+body.section-store h2 a {
+  color: #fff;
+}
+
+body.section-store div.view-store .form-submit {
+  display: block;
+  margin: 0 auto 20px;
+}
+
 tr.even { /* Some tables have rows marked even or odd. */
   /* background-color: #eee; */ /* Drupal core uses a #eee background */
 }
