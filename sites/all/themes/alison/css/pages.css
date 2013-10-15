@@ -160,7 +160,7 @@ body.node-type-comic-strip .field-name-body,
 body.page-archive div.view,
 body.section-about .field-name-body {
   background-color: #D8E0E3;
-  padding: 1px 15px;
+  padding: 3px 15px 1px;
 }
 
 body.node-type-comic-strip .field-name-field-comic,
@@ -359,5 +359,5 @@ span.field-label { /* The inline field label used by the Fences module */
 
 .field-name-field-image-page {
   float: left;
-  margin-right: 20px;
+  margin-right: 25px;
 }
