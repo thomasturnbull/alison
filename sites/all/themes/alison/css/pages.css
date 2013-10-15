@@ -221,6 +221,7 @@ body.section-store h2 a {
 body.section-store div.view-store .form-submit {
   display: block;
   margin: 0 auto 20px;
+  float: left;
 }
 
 body.section-store article.node-10 h2 {
@@ -235,8 +236,7 @@ body.section-store .commerce-add-to-cart label {
   font-weight: normal;
 }
 
-body.section-store .commerce-add-to-cart div.form-item-quantity,
-body.section-store .commerce-add-to-cart input.form-submit {
+body.section-store .commerce-add-to-cart div.form-item-quantity {
   float: left;
   width: 120px;
   margin-top: 0;
