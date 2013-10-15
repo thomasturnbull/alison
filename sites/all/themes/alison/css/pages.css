@@ -197,6 +197,7 @@ body.section-about .node img {
 
 body.section-store div.view-store {
   padding-bottom: 30px;
+  margin-left: 38px;
 }
 
 body.section-store div.view-store div.views-row {
@@ -205,7 +206,11 @@ body.section-store div.view-store div.views-row {
   background-color: #B1C3C7;
   margin-left: 26px;
   margin-bottom: 26px;
-  padding: 17px;
+  padding: 25px 22px;
+}
+
+body.section-store div.view-store div.views-row div.field-item {
+  text-align: center;
 }
 
 body.section-store h2 {
