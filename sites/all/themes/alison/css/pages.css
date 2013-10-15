@@ -247,6 +247,11 @@ body.section-store .commerce-add-to-cart div.form-item-quantity {
   margin-top: 0;
 }
 
+div.field-name-commerce-price {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  margin-bottom: 1.5em;
+}
+
 tr.even { /* Some tables have rows marked even or odd. */
   /* background-color: #eee; */ /* Drupal core uses a #eee background */
 }
