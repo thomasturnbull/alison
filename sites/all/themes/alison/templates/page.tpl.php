@@ -178,5 +178,6 @@
   <?php print render($page['footer']); ?>
 
 </div><!-- /#page -->
-
+<?php // Custom text for comics list ?>
+<!-- Last Update: <?php print date("d/m/Y", alisonmods_latestcomic_timestamp()) ?> -->
 <?php print render($page['bottom']); ?>

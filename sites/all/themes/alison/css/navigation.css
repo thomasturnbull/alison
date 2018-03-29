@@ -82,9 +82,24 @@ li a.active {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
   font-size: 1.3em;
   color: #000;
-  margin-left: 90px;
+  margin-left: 75px;
 }
 
+/* Mobile styles */
+@media (max-width: 600px) {
+  #navigation {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+    height: inherit;
+  }
+
+  #navigation a {
+    margin-left: 5px;
+  }
+}
 /*
  * Main menu and Secondary menu links
  */

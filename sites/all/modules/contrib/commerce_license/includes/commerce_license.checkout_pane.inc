@@ -125,20 +125,24 @@ function commerce_license_complete_checkout_form($form, &$form_state, $checkout_
  */
 function commerce_license_complete_checkout_ajax_callback($license) {
   $session_key = 'commerce_license_refresh_start_' . $license->license_id;
+  $current_time = commerce_license_get_time();
   if (!isset($_SESSION[$session_key])) {
-    $_SESSION[$session_key] = REQUEST_TIME;
+    $_SESSION[$session_key] = $current_time;
   }
   // Check if the refresh has timed out.
-  $refresh_time = REQUEST_TIME - $_SESSION[$session_key];
+  $refresh_time = $current_time - $_SESSION[$session_key];
   $refresh_timeout = variable_get('commerce_license_refresh_timeout', 60);
   if ($refresh_time > $refresh_timeout) {
     $license->wrapper->sync_status = COMMERCE_LICENSE_SYNC_FAILED;
     $license->save();
+    // Fire a rules event and a hook, allowing developers to respond
+    // to a failed synchronization.
+    rules_invoke_all('commerce_license_synchronize_failed', $license);
   }
   // Stop the refresh if synchronization has ended (succeeded, failed).
   $refresh = TRUE;
   $sync_status = $license->wrapper->sync_status->value();
-  if (in_array($sync_status, array(COMMERCE_LICENSE_SYNCED, COMMERCE_LICENSE_SYNC_FAILED))) {
+  if ($sync_status != COMMERCE_LICENSE_NEEDS_SYNC) {
     unset($_SESSION[$session_key]);
     $refresh = FALSE;
   }

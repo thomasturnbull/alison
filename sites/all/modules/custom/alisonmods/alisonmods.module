@@ -8,17 +8,28 @@ function alisonmods_menu() {
     return $items;
   }
 
-  function alisonmods_latestcomic() {
-    // change to correct nid
-    $latest = db_select('node')
-      ->fields('node', array('nid'))
-      ->condition('status', 1)
-      ->condition('type', 'comic_strip', '=')
-      ->range(0, 1)
-      ->orderBy('created', 'DESC')
-      ->execute()->fetchAssoc();
-    drupal_goto('node/' . $latest['nid']);
-  }
+function alisonmods_latestcomic() {
+  // change to correct nid
+  $latest = db_select('node')
+    ->fields('node', array('nid'))
+    ->condition('status', 1)
+    ->condition('type', 'comic_strip', '=')
+    ->range(0, 1)
+    ->orderBy('created', 'DESC')
+    ->execute()->fetchAssoc();
+  drupal_goto('node/' . $latest['nid']);
+}
+
+function alisonmods_latestcomic_timestamp() {
+  $latest = db_select('node')
+    ->fields('node', array('created'))
+    ->condition('status', 1)
+    ->condition('type', 'comic_strip', '=')
+    ->range(0, 1)
+    ->orderBy('created', 'DESC')
+    ->execute()->fetchAssoc();
+  return $latest['created'];
+}
 
  /**
  * Remove sticky/promote entirely from add and edit content type forms.

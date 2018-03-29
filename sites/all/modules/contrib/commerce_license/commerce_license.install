@@ -160,7 +160,7 @@ function commerce_license_schema() {
 function commerce_license_uninstall() {
   // Delete product and line item fields and their instances.
   field_delete_field('commerce_license_type');
-  field_delete_field('commerce_license_expiration');
+  field_delete_field('commerce_license_duration');
   field_delete_field('commerce_license');
 
   // Delete variable settings.
@@ -309,6 +309,24 @@ function commerce_license_update_7101(&$sandbox) {
 
     $sandbox['#finished'] = empty($sandbox['max']) ? 1 : ($sandbox['progress'] / $sandbox['max']);
   }
+  else {
+    // No licenses needed conversion, nothing else to be done.
+    $sandbox['#finished'] = 1;
+  }
 
   return t('The update for license revisions ran successfully.');
+}
+
+/**
+ * Change the label of the commerce_license_duration field from
+ * 'License expiration' to 'License duration'.
+ */
+function commerce_license_update_7102(&$sandbox) {
+  foreach (commerce_license_product_types() as $product_type) {
+    $instance = field_info_instance('commerce_product', 'commerce_license_duration', $product_type);
+    if ($instance['label'] == 'License expiration') {
+      $instance['label'] = 'License duration';
+      field_update_instance($instance);
+    }
+  }
 }

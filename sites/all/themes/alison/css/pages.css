@@ -101,6 +101,22 @@ body {
   padding-bottom: 25px;
 }
 
+
+@media (max-width: 600px) {
+  #content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+ 
+  #page {
+    padding-top: 0px;
+  }
+
+  #header {
+    padding-left: 10px;
+  }
+}
+
 .region-highlighted {
 }
 
